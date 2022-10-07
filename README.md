@@ -1,6 +1,7 @@
-```노예는
-일을
-해야지
+## 노예는 일을 해야지.
+
+```
+배움은 끝이 없다 씨팔 좀 쉬고싶다.
 ```
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
