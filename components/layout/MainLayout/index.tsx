@@ -1,16 +1,26 @@
-import Footer from '../block/Footer';
-import Header from '../block/Header';
+import { useCallback } from 'react';
+import BaseLayout from '../BaseLayout/index';
+import * as S from './style';
 
 interface IProps {
   children?: React.ReactNode;
+  title?: string;
 }
 
-function MainLayout({ children }: IProps) {
+function MainLayout({ children, title }: IProps) {
+  const getRender = useCallback(() => {
+    return (
+      <main id="container">
+        <div className="content">{children}</div>
+      </main>
+    );
+  }, []);
+
   return (
     <>
-      <Header></Header>
-      {children}
-      <Footer></Footer>
+      <S.MainLayout>
+        <BaseLayout title={title}>{getRender()}</BaseLayout>
+      </S.MainLayout>
     </>
   );
 }

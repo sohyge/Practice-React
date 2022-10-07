@@ -1,14 +1,203 @@
-import type { NextPage } from 'next'
-import MainLayout from '../../components/layout/MainLayout'
+import type { NextPage } from 'next';
+import MainLayout from '../../components/layout/MainLayout';
 
-function test({} : NextPage){
+function test({}: NextPage) {
   return (
     <>
-    <MainLayout>
+      <MainLayout title="하이루 반가워요">
         TEST
-    </MainLayout>
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br /> TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br /> TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br /> TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br /> TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br /> TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br /> TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+        TEST
+        <br />
+      </MainLayout>
     </>
-  )
+  );
 }
 
-export default test
+export default test;

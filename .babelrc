@@ -1,0 +1,19 @@
+{
+  "presets": ["next/babel"],
+  "env": {
+    "production": {
+      "plugins": [["transform-remove-console", { "exclude": ["error", "warn"] }]]
+    }
+  },
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": true,
+        "pure": true,
+        "fileName": true,
+        "displayName": false
+      }
+    ]
+  ]
+}
