@@ -1,5 +1,5 @@
-import Footer from '../block/Footer';
-import Header from '../block/Header';
+import Footer from '../../block/Footer';
+import Header from '../../block/Header';
 import * as S from './style';
 
 interface IProps {

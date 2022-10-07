@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import BaseLayout from '../BaseLayout/index';
+import BaseLayout from '../BaseLayout';
 import * as S from './style';
 
 interface IProps {
