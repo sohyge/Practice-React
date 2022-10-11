@@ -11,7 +11,7 @@ function Header({ title }: IProps) {
   }, [title]);
   return (
     <>
-      <S.Header>
+      <S.Header id="header">
         <div>{getTitle()}</div>
       </S.Header>
     </>
