@@ -16,7 +16,14 @@ function Footer() {
     );
   }, []);
   const getFooterInfo = useCallback(() => {
-    return <div>야호</div>;
+    return (
+      <div className="footer-content">
+        This is Practice Project
+        <br />
+        All rights reserved? I'm not sure <br />
+        Anyway, u can contact to Hyukgeun and Seunghee bro.
+      </div>
+    );
   }, []);
   return (
     <>
