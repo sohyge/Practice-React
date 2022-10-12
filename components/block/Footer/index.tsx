@@ -15,11 +15,14 @@ function Footer() {
       </>
     );
   }, []);
+  const getFooterInfo = useCallback(() => {
+    return <div>야호</div>;
+  }, []);
   return (
     <>
       <S.Footer>
         <FooterItem items={getItems()}></FooterItem>
-        asfsaf
+        {getFooterInfo()}
       </S.Footer>
     </>
   );
