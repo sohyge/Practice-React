@@ -23,5 +23,5 @@ React.js - 메인 기술 스택
 현 프로젝트 예제 데이터는 한국도로공사의 openAPI를 사용합니다.
 
 ```
-    http://data.ex.co.kr/dataset/datasetList/list?pn=1#
+http://data.ex.co.kr/dataset/datasetList/list?pn=1#
 ```
