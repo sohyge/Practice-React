@@ -1,14 +1,17 @@
 import type { NextPage } from 'next';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useQuery } from 'react-query';
+import InfoGrid from '../../components/block/InfoGrid';
+import InfoGridItem from '../../components/block/InfoGridItem';
 import MainLayout from '../../components/layout/MainLayout';
 import { getTrafficInfo } from '../../libs/apis/openAPI';
 
-function test({}: NextPage) {
-  const { data, error, isLoading } = useQuery('testCacheKey', getTrafficInfo, {
+function test() {
+  const { data, error, isLoading } = useQuery('testCacheKey', () => getTrafficInfo(), {
     refetchOnWindowFocus: false,
     retry: 0,
   });
+
   const getListRender = useCallback(() => {
     if (error) {
       console.log('error');
@@ -19,21 +22,21 @@ function test({}: NextPage) {
           console.log('error');
         }
         return (
-          <div>
+          <InfoGrid>
             {itemList.map((item: any, i: number) => {
-              console.log(item);
-              console.log(item.stime);
-              return <span key={i}>123</span>;
+              return <InfoGridItem key={i} title={item.code} />;
             })}
-          </div>
+          </InfoGrid>
         );
       }
     }
   }, [data, isLoading]);
 
-  const getTitle = useCallback(() => {
-    return <span>hi</span>;
-  }, []);
+  const getTitle = () => {
+    console.log(`${data}`);
+    console.log(`${data?.code}`);
+    return <span>{`${data?.code || 'ㅇㅇ'}`}</span>;
+  };
 
   return (
     <>
