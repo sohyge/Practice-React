@@ -19,9 +19,10 @@ function Footer() {
     return (
       <div className="footer-content">
         This is Practice Project
-        <br />
-        All rights reserved? I'm not sure <br />
-        Anyway, u can contact to Hyukgeun and Seunghee bro.
+        <p>
+          All rights reserved? I'm not sure <br />
+          Anyway, u can contact to Hyukgeun and Seunghee bro.
+        </p>
       </div>
     );
   }, []);
