@@ -1,9 +1,13 @@
 import * as S from './style';
 
-function FooterItem() {
+interface IProps {
+  items: React.ReactNode;
+}
+
+function FooterItem({ items }: IProps) {
   return (
     <>
-      <S.Content>메뉴 1 | 메뉴 2</S.Content>
+      <S.Content>{items}</S.Content>
     </>
   );
 }
