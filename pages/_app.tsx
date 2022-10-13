@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -12,8 +12,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>REACT NEXT.JS</title>
       </Head>
       <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={true} />
         <Component {...pageProps} />
+        <ReactQueryDevtools initialIsOpen={true} />
       </QueryClientProvider>
     </>
   );

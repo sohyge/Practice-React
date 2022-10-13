@@ -1,13 +1,13 @@
 import type { NextPage } from 'next';
 import { useCallback, useEffect } from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import InfoGrid from '../../components/block/InfoGrid';
 import InfoGridItem from '../../components/block/InfoGridItem';
 import MainLayout from '../../components/layout/MainLayout';
 import { getTrafficInfo } from '../../libs/apis/openAPI';
 
 function test() {
-  const { data, error, isLoading } = useQuery('testCacheKey', () => getTrafficInfo(), {
+  const { isLoading, error, data } = useQuery(['getTraffic'], () => getTrafficInfo(), {
     refetchOnWindowFocus: false,
     retry: 0,
   });
