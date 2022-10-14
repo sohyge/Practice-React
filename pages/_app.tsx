@@ -1,11 +1,22 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import '../styles/globals.css';
+import React from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const queryClient = new QueryClient();
+  const [queryClient] = React.useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            refetchOnWindowFocus: false,
+            retry: 0,
+          },
+        },
+      }),
+  );
   return (
     <>
       <Head>
