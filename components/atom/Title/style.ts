@@ -1,3 +1,3 @@
 import styled from 'styled-components';
 
-export const InfoGrid = styled.div``;
+export const TitleWrap = styled.div``;

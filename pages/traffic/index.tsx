@@ -1,8 +1,7 @@
-import type { GetStaticProps, NextPage } from 'next';
-import { useCallback, useEffect } from 'react';
-import { useQuery } from '@tanstack/react-query';
-import InfoGrid from '../../components/block/InfoGrid';
-import InfoGridItem from '../../components/block/InfoGridItem';
+import type { GetStaticProps } from 'next';
+import { Box } from '../../components/atom/Box';
+import ItemsGrid from '../../components/block/ItemsGrid';
+import TrafficItem from '../../components/block/TrafficItem';
 import MainLayout from '../../components/layout/MainLayout';
 import { getTrafficInfo, TrafficInfoResponse } from '../../libs/apis/openAPI';
 
@@ -15,7 +14,13 @@ function trafficPage({ trafficInfo }: IProps) {
     if (!trafficList) return false;
     if (trafficList?.list) {
       const traffic = trafficList?.list[0];
-      return <InfoGrid>{`${traffic.cbssu}`}</InfoGrid>;
+      return (
+        <Box>
+          <ItemsGrid className={'traffic_list'} perView={2} rowGap={40} colGap={4} md={{ perView: 3 }}>
+            <TrafficItem title={'서울방향 교통량'} traffic={traffic.cseoulDir} />
+          </ItemsGrid>
+        </Box>
+      );
     }
   };
 
