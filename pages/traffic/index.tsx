@@ -4,21 +4,24 @@ import { useQuery } from '@tanstack/react-query';
 import InfoGrid from '../../components/block/InfoGrid';
 import InfoGridItem from '../../components/block/InfoGridItem';
 import MainLayout from '../../components/layout/MainLayout';
-import { getTrafficInfo } from '../../libs/apis/openAPI';
+import { getTrafficInfo, TrafficInfoResponse } from '../../libs/apis/openAPI';
 
 export interface IProps {
-  trafficInfo: Array<string>;
+  trafficInfo: TrafficInfoResponse;
 }
-function test({ trafficInfo }: IProps) {
-  const getTitle = () => {
-    console.log(`${trafficInfo}`);
-    console.log(`${trafficInfo?.code}`);
-    return <span>{`${trafficInfo?.code || 'ㅇㅇ'}`}</span>;
+function trafficPage({ trafficInfo }: IProps) {
+  const getTrafficList = () => {
+    const trafficList = trafficInfo;
+    if (!trafficList) return false;
+    if (trafficList?.list) {
+      const traffic = trafficList?.list[0];
+      return <InfoGrid>{`${traffic.cbssu}`}</InfoGrid>;
+    }
   };
 
   return (
     <>
-      <MainLayout title="Test Page">{getTitle()}</MainLayout>
+      <MainLayout title="Test Page">{getTrafficList()}</MainLayout>
     </>
   );
 }
@@ -40,4 +43,4 @@ export const getServerSideProps: GetStaticProps = async (context) => {
     };
   }
 };
-export default test;
+export default trafficPage;
