@@ -18,6 +18,11 @@ function trafficPage({ trafficInfo }: IProps) {
         <Box>
           <ItemsGrid className={'traffic_list'} perView={2} rowGap={40} colGap={4} md={{ perView: 3 }}>
             <TrafficItem title={'서울방향 교통량'} traffic={traffic.cseoulDir} />
+            <TrafficItem title={'서울방향 교통량'} traffic={traffic.cseoulDir} />
+            <TrafficItem title={'서울방향 교통량'} traffic={traffic.cseoulDir} />
+            <TrafficItem title={'서울방향 교통량'} traffic={traffic.cseoulDir} />
+            <TrafficItem title={'서울방향 교통량'} traffic={traffic.cseoulDir} />
+            <TrafficItem title={'서울방향 교통량'} traffic={traffic.cseoulDir} />
           </ItemsGrid>
         </Box>
       );

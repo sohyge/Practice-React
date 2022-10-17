@@ -4,7 +4,7 @@ import router from 'next/router';
 
 function index({}: NextPage) {
   useEffect(() => {
-    router.push('/test');
+    router.push('/traffic');
   }, []);
   return <></>;
 }

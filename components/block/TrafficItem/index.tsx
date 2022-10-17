@@ -1,4 +1,5 @@
 import Text from '../../atom/Text';
+import Title from '../../atom/Title';
 import * as S from './style';
 
 interface IProps {
@@ -9,10 +10,10 @@ interface IProps {
 function InfoGridItem({ title, traffic }: IProps) {
   return (
     <S.InfoGridItem>
-      <Text size={20} weight={500}>
-        {title}
+      <Title text={title} size={20} weight={500} />
+      <Text size={15} weight={500}>
+        {traffic}
       </Text>
-      {traffic}
     </S.InfoGridItem>
   );
 }
