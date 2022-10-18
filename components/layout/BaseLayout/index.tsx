@@ -49,7 +49,6 @@ function BaseLayout({ children, title }: IProps) {
       <S.BaseLayout className={layoutMode}>
         <Header title={title}></Header>
         {children}
-        <Footer></Footer>
       </S.BaseLayout>
     </>
   );

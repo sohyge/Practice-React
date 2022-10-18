@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import Footer from '../../block/Footer';
 import BaseLayout from '../BaseLayout';
 import * as S from './style';
 
@@ -20,6 +21,7 @@ function MainLayout({ children, title }: IProps) {
     <>
       <S.MainLayout>
         <BaseLayout title={title}>{getRender()}</BaseLayout>
+        <Footer></Footer>
       </S.MainLayout>
     </>
   );

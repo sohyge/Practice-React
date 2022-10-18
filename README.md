@@ -18,6 +18,12 @@ React.js - 메인 기술 스택
     ㄴ TypeScript - 없으면 서운하지
 ```
 
+```
+날짜 변환 및 표현 라이브러리 - day.js
+moment.js를 대체하는 라이브러리, 가볍고 빠르다.
+https://day.js.org/
+```
+
 ## openAPI
 
 현 프로젝트 예제 데이터는 한국도로공사의 openAPI를 사용합니다.
