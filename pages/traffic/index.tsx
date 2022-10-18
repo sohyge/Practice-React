@@ -3,6 +3,7 @@ import type { GetStaticProps } from 'next';
 import { useCallback } from 'react';
 import { Box } from '../../components/atom/Box';
 import ItemsGrid from '../../components/block/ItemsGrid';
+import ProgressBar from '../../components/block/ProgressBar';
 import TrafficItem from '../../components/block/TrafficItem';
 import MainLayout from '../../components/layout/MainLayout';
 import { getTrafficInfo, TrafficInfoResponse } from '../../libs/apis/openAPI';
@@ -34,29 +35,22 @@ function trafficPage({ trafficInfo }: IProps) {
       return `${_traffic}대`;
     }
   }, []);
-
   const getTrafficList = () => {
     const trafficList = trafficInfo;
     if (!trafficList) return false;
     if (trafficList?.list) {
       const traffic = trafficList?.list[0];
       return (
-        <Box>
-          <ItemsGrid className={'traffic_list'} perView={2} rowGap={40} colGap={4} md={{ perView: 3 }}>
-            <Box pb={10}>
-              <TrafficItem title={'날짜 / 시간'} traffic={`${getDate(traffic.sdate)} / ${getTime(traffic.stime)}`} />
-            </Box>
-            <Box pb={10}>
-              <TrafficItem title={'전국 교통량'} traffic={convertTraffic(traffic.cjunkook)} />
-            </Box>
-            <Box pb={10}>
-              <TrafficItem title={'지방방향 교통량'} traffic={convertTraffic(traffic.cjibangDir)} />
-            </Box>
-            <Box>
-              <TrafficItem title={'서울방향 교통량'} traffic={convertTraffic(traffic.cseoulDir)} />
-            </Box>
-          </ItemsGrid>
-        </Box>
+        <ItemsGrid className={'traffic_list'} perView={2} rowGap={40} colGap={4} md={{ perView: 3 }}>
+          <TrafficItem
+            title={'날짜 / 시간'}
+            className={'alone'}
+            traffic={`${getDate(traffic.sdate)} / ${getTime(traffic.stime)}`}
+          />
+          <TrafficItem title={'전국 교통량'} className={'alone'} traffic={convertTraffic(traffic.cjunkook)} />
+          <TrafficItem title={'서울방향 교통량'} traffic={convertTraffic(traffic.cseoulDir)} />
+          <TrafficItem title={'지방방향 교통량'} traffic={convertTraffic(traffic.cjibangDir)} />
+        </ItemsGrid>
       );
     }
   };

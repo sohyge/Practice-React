@@ -1,3 +1,11 @@
 import styled from 'styled-components';
 
-export const InfoGridItem = styled.div``;
+interface IProps {
+  className?: string;
+}
+
+export const InfoGridItem = styled.div.attrs(() => ({
+  className: 'box',
+}))<IProps>`
+  padding-top: 10px;
+`;

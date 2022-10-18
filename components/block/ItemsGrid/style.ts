@@ -12,9 +12,14 @@ export const ItemsGrid = styled.div<IProps>`
   margin-left: ${({ colGap }) => (typeof colGap === 'number' ? `-${colGap / 2}px` : colGap)};
   margin-right: ${({ colGap }) => (typeof colGap === 'number' ? `-${colGap / 2}px` : colGap)};
 
-  > .item {
+  > .box {
+    display: inline-block;
     width: ${({ perView }) => (typeof perView === 'number' ? `${100 / perView}%` : perView)};
     padding-left: ${({ colGap }) => (typeof colGap === 'number' ? `${colGap / 2}px` : colGap)};
     padding-right: ${({ colGap }) => (typeof colGap === 'number' ? `${colGap / 2}px` : colGap)};
+  }
+
+  > .alone {
+    display: block;
   }
 `;
