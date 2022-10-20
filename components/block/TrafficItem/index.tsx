@@ -57,8 +57,24 @@ function InfoGridItem({ type, title, traffic, className, max, tsize, size }: IPr
     );
   }, [getRender]);
 
+  const getTimeProgressRender = useCallback(() => {
+    const _hour = parseInt(traffic?.slice(0, -3)) * 60;
+    const _min = parseInt(traffic?.slice(2, 4));
+    const vTime = _hour + _min;
+    return (
+      <>
+        <ProgressBar traffic={vTime} max={12 * 60} />
+      </>
+    );
+  }, [getRender]);
+
   const getProgressRender = useCallback(() => {
-    return <>{type !== 'time' && <ProgressBar traffic={maxTraffic} max={100} />}</>;
+    return (
+      <>
+        {type !== 'time' && <ProgressBar traffic={maxTraffic} max={100} />}
+        {type === 'time' && getTimeProgressRender()}
+      </>
+    );
   }, [maxTraffic]);
 
   return (

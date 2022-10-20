@@ -175,7 +175,7 @@ function trafficPage({ trafficInfo }: IProps) {
 
   return (
     <>
-      <MainLayout title="Test Page">{getTrafficList()}</MainLayout>
+      <MainLayout title="현재 교통예보 현황">{getTrafficList()}</MainLayout>
     </>
   );
 }
