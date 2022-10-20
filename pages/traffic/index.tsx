@@ -1,9 +1,7 @@
 import dayjs from 'dayjs';
 import type { GetStaticProps } from 'next';
 import { useCallback } from 'react';
-import { Box } from '../../components/atom/Box';
 import ItemsGrid from '../../components/block/ItemsGrid';
-import ProgressBar from '../../components/block/ProgressBar';
 import TrafficItem from '../../components/block/TrafficItem';
 import MainLayout from '../../components/layout/MainLayout';
 import { getTrafficInfo, TrafficInfoResponse } from '../../libs/apis/openAPI';
