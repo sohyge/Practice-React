@@ -7,8 +7,25 @@ function Example() {
   const { isLoading, error, data } = useQuery([CACHE_KEY.TRAFFIC.TRAFFIC_INFO], () => getTrafficInfo());
 
   const getInfo = useCallback(() => {
-    return <div>{data?.list[0].cbssu_bus}</div>;
-  }, []);
+    return (
+      <div>
+        {data?.message}
+        {data?.message}
+        {data?.message}
+        {data?.message}
+        {data?.message}
+        {data?.message}
+        {data?.message}
+        {data?.message}
+        {data?.message}
+        {data?.message}
+        {data?.message}
+        {data?.message}
+        {data?.message}
+        {data?.message}
+      </div>
+    );
+  }, [data]);
   return <div>{getInfo()}</div>;
 }
 
