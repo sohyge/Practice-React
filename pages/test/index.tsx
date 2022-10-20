@@ -1,22 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
+import { useCallback } from 'react';
+import { getTrafficInfo } from '../../libs/apis/openAPI';
 
 function Example() {
-  const { isLoading, error, data } = useQuery(['repoData'], () =>
-    fetch('https://api.github.com/repos/tannerlinsley/react-query').then((res) => res.json()),
-  );
+  const { isLoading, error, data } = useQuery(['repoData'], () => getTrafficInfo());
 
-  if (isLoading) return 'Loading...';
-
-  if (error) return 'An error has occurred: ' + error.message;
-
-  return (
-    <div>
-      <h1>{data.name}</h1>
-      <p>{data.description}</p>
-      <strong>👀 {data.subscribers_count}</strong> <strong>✨ {data.stargazers_count}</strong>{' '}
-      <strong>🍴 {data.forks_count}</strong>
-    </div>
-  );
+  const getInfo = useCallback(() => {
+    return <div>{data?.list[0].cbssu_bus}</div>;
+  }, []);
+  return <div>{getInfo()}</div>;
 }
 
 export default Example;
