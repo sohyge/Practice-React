@@ -24,17 +24,7 @@ function trafficPage({ trafficInfo }: IProps) {
     // console.log(time);
     return time;
   }, []);
-  const convertTraffic = useCallback((_traffic: string) => {
-    if (parseInt(_traffic) >= 10000) {
-      const _cTraffic = _traffic.slice(0, -4);
-      return `약 ${_cTraffic}만대`;
-    } else if (parseInt(_traffic) >= 1000) {
-      const _cTraffic = _traffic.slice(0, -3);
-      return `약 ${_cTraffic}천대`;
-    } else {
-      return `${_traffic}대`;
-    }
-  }, []);
+
   const getTrafficList = () => {
     const trafficList = trafficInfo;
     if (!trafficList) return false;
@@ -43,13 +33,14 @@ function trafficPage({ trafficInfo }: IProps) {
       return (
         <ItemsGrid className={'traffic_list'} perView={2} rowGap={40} colGap={4} md={{ perView: 3 }}>
           <TrafficItem
+            type={'title'}
             title={'날짜 / 시간'}
             className={'alone'}
             traffic={`${getDate(traffic.sdate)} / ${getTime(traffic.stime)}`}
           />
-          <TrafficItem title={'전국 교통량'} className={'alone'} traffic={convertTraffic(traffic.cjunkook)} />
-          <TrafficItem title={'서울방향 교통량'} traffic={convertTraffic(traffic.cseoulDir)} />
-          <TrafficItem title={'지방방향 교통량'} traffic={convertTraffic(traffic.cjibangDir)} />
+          <TrafficItem title={'전국 교통량'} className={'alone'} traffic={traffic.cjunkook} max={traffic.cjunkook} />
+          <TrafficItem title={'서울방향 교통량'} traffic={traffic.cseoulDir} max={traffic.cjunkook} />
+          <TrafficItem title={'지방방향 교통량'} traffic={traffic.cjibangDir} max={traffic.cjunkook} />
         </ItemsGrid>
       );
     }
