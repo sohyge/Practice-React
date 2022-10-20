@@ -21,5 +21,6 @@ export const ItemsGrid = styled.div<IProps>`
 
   > .alone {
     display: block;
+    width: 100%;
   }
 `;
