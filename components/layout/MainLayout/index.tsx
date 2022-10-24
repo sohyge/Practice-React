@@ -15,7 +15,7 @@ function MainLayout({ children, title }: IProps) {
         <div className="content">{children}</div>
       </main>
     );
-  }, []);
+  }, [children]);
 
   return (
     <>
