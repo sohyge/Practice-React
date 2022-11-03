@@ -10,20 +10,13 @@ function locationPage() {
   const getInfo = useCallback(() => {
     return (
       <div>
-        {data?.message}
-        {data?.message}
-        {data?.message}
-        {data?.message}
-        {data?.message}
-        {data?.message}
-        {data?.message}
-        {data?.message}
-        {data?.message}
-        {data?.message}
-        {data?.message}
-        {data?.message}
-        {data?.message}
-        {data?.message}
+        {data?.list.map((i) => {
+          return (
+            <div>
+              {i.unitName},{i.routeName}
+            </div>
+          );
+        })}
       </div>
     );
   }, [data]);
