@@ -1,9 +1,0 @@
-export const CACHE_KEY = {
-  TRAFFIC: {
-    TRAFFIC_INFO: 'TRAFFIC_INFO',
-    TRAFFIC_REAL_INFO: 'TRAFFIC_REAL_INFO',
-  },
-  LOCATION: {
-    LOCATION_INFO: 'LOCATION_INFO',
-  },
-};
