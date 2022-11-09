@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>REACT NEXT.JS</title>
+        <title>HELLO, WORLD!</title>
       </Head>
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
