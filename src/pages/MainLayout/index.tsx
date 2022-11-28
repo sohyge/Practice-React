@@ -4,6 +4,7 @@ import ItemList from "../../components/ItemList";
 import Square from "../../components/Square";
 import Title from "../../components/Title";
 import Text from "../../components/Text";
+import Button from "../../components/Button";
 
 function MainLayout() {
   const [turn, setTurn] = useState(true);
@@ -39,6 +40,22 @@ function MainLayout() {
     },
     [mocArr, setMocArr]
   );
+  const getButtonRender = useCallback(() => {
+    return (
+      <Button
+        title={"새 게임하기"}
+        onClick={() => {
+          resetData();
+        }}
+      />
+    );
+  }, []);
+
+  const resetData = useCallback(() => {
+    setMocArr(["", "", "", "", "", "", "", "", ""]);
+    setTurn(true);
+  }, []);
+
   const getTilteRender = useCallback(() => {
     return <Title size={30} bold={"bolder"} title={"Tic Tac Toe !"} />;
   }, []);
@@ -56,6 +73,7 @@ function MainLayout() {
   const MainRender = useCallback(() => {
     return (
       <Board>
+        {getButtonRender()}
         {getTilteRender()}
         {getTitleSubRender()}
         <ItemList>{getItem()}</ItemList>
