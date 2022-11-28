@@ -1,15 +1,42 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import Board from "../../components/Board";
 import ItemList from "../../components/ItemList";
 import Square from "../../components/Square";
 
 function MainLayout() {
-  const MocArr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+  const [turn, setTurn] = useState(true);
+  const [mocArr, setMocArr] = useState(["", "", "", "", "", "", "", "", ""]);
   const getItem = useCallback(() => {
-    return MocArr.map((v, i) => {
-      return <Square>{v + 1}</Square>;
+    return mocArr.map((v, i) => {
+      return (
+        <Square
+          key={i}
+          onClick={() => {
+            clickItem(i);
+          }}
+        >
+          {mocArr[i]}
+        </Square>
+      );
     });
-  }, []);
+  }, [mocArr]);
+  const clickItem = useCallback(
+    (i: number) => {
+      const tmp = [...mocArr];
+
+      //원래 있는곳에 두려면 막아버림
+      if (tmp[i] !== "") return;
+
+      if (turn) {
+        tmp[i] = "O";
+      } else {
+        tmp[i] = "X";
+      }
+      setMocArr(tmp);
+      setTurn(!turn);
+    },
+    [mocArr, setMocArr]
+  );
   const MainRender = useCallback(() => {
     return (
       <Board>
