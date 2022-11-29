@@ -8,7 +8,7 @@ import Button from "../../components/Button";
 
 function MainLayout() {
   const [turn, setTurn] = useState(true);
-  const [mocArr, setMocArr] = useState(["", "", "", "", "", "", "", "", ""]);
+  const [mocArr, setMocArr] = useState(Array(9).fill(null));
   const getItem = useCallback(() => {
     return mocArr.map((v, i) => {
       return (
@@ -28,7 +28,7 @@ function MainLayout() {
       const tmp = [...mocArr];
 
       //원래 있는곳에 두려면 막아버림
-      if (tmp[i] !== "") return;
+      if (tmp[i] !== null) return;
 
       if (turn) {
         tmp[i] = "O";
@@ -52,7 +52,7 @@ function MainLayout() {
   }, []);
 
   const resetData = useCallback(() => {
-    setMocArr(["", "", "", "", "", "", "", "", ""]);
+    setMocArr(Array(9).fill(null));
     setTurn(true);
   }, []);
 
