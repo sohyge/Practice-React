@@ -1,10 +1,19 @@
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./pages/MainLayout";
+import Tictactoe from "./pages/Tictactoe";
+import Baskin31 from "./pages/baskin31";
 
 function App() {
   return (
     <>
-      <MainLayout></MainLayout>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainLayout />}></Route>
+          <Route path="/Tictactoe" element={<Tictactoe />}></Route>
+          <Route path="/baskin31" element={<Baskin31 />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
