@@ -6,8 +6,12 @@ function MainLayout() {
   const MainRender = useCallback(() => {
     return (
       <Board>
-        {/* <a href="/Tictactoe">틱택토우!</a> */}
-        <Link to="/Tictactoe">틱택토우!</Link>
+        <div>
+          <Link to="/Tictactoe">틱택토우!</Link>
+        </div>
+        <div>
+          <Link to="/Baskin31">베스킨라빈스31</Link>
+        </div>
       </Board>
     );
   }, []);
